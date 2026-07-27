@@ -1,0 +1,533 @@
+/* ============================================
+   REZUMI - Theme System
+   ============================================ */
+
+/* Light Theme */
+[data-theme="light"] {
+    --bg-primary: #f8f9fc;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #f0f2f7;
+    --bg-card: rgba(0, 0, 0, 0.02);
+    --bg-card-hover: rgba(0, 0, 0, 0.04);
+    --border-color: rgba(0, 0, 0, 0.08);
+    --border-hover: rgba(0, 0, 0, 0.15);
+    --text-primary: #1a1a2e;
+    --text-secondary: rgba(26, 26, 46, 0.7);
+    --text-tertiary: rgba(26, 26, 46, 0.4);
+    --text-muted: rgba(26, 26, 46, 0.25);
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.1);
+    --shadow-xl: 0 16px 64px rgba(0,0,0,0.12);
+}
+
+[data-theme="light"] .nav-bar {
+    background: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme="light"] .logo-svg,
+[data-theme="light"] .nav-logo-icon {
+    color: var(--accent);
+}
+
+[data-theme="light"] .splash-screen {
+    background: #ffffff;
+}
+
+[data-theme="light"] .logo-letter {
+    color: #1a1a2e;
+}
+
+[data-theme="light"] .tagline-word {
+    color: rgba(26, 26, 46, 0.5);
+}
+
+/* AMOLED Theme */
+[data-theme="amoled"] {
+    --bg-primary: #000000;
+    --bg-secondary: #000000;
+    --bg-tertiary: #0a0a0a;
+    --bg-card: rgba(255, 255, 255, 0.02);
+    --bg-card-hover: rgba(255, 255, 255, 0.04);
+    --border-color: rgba(255, 255, 255, 0.05);
+    --border-hover: rgba(255, 255, 255, 0.1);
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.5);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.7);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.8);
+    --shadow-xl: 0 16px 64px rgba(0,0,0,0.9);
+}
+
+[data-theme="amoled"] .nav-bar {
+    background: rgba(0, 0, 0, 0.95);
+    border-bottom-color: rgba(255, 255, 255, 0.03);
+}
+
+[data-theme="amoled"] .glass-card,
+[data-theme="amoled"] .modal,
+[data-theme="amoled"] .search-container {
+    background: rgba(10, 10, 10, 0.95);
+}
+
+/* ============================================
+   DARK & AMOLED THEME - Full Contrast Fix
+   Ensures all UI elements have proper contrast
+   in dark and AMOLED themes.
+   ============================================ */
+
+/* Form inputs in dark/AMOLED */
+[data-theme="dark"] .form-input,
+[data-theme="amoled"] .form-input {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .form-input:focus,
+[data-theme="amoled"] .form-input:focus {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--accent);
+}
+
+[data-theme="dark"] .form-input::placeholder,
+[data-theme="amoled"] .form-input::placeholder {
+    color: var(--text-muted);
+}
+
+/* Select dropdowns */
+[data-theme="dark"] select.form-input,
+[data-theme="amoled"] select.form-input {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] select.form-input option,
+[data-theme="amoled"] select.form-input option {
+    background: #1a1a2e;
+    color: #ffffff;
+}
+
+/* Modals & Overlays */
+[data-theme="dark"] .modal,
+[data-theme="dark"] .modal-overlay {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .modal-body,
+[data-theme="amoled"] .modal-body {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .modal-header,
+[data-theme="dark"] .modal-footer,
+[data-theme="amoled"] .modal-header,
+[data-theme="amoled"] .modal-footer {
+    border-color: var(--border-color);
+}
+
+/* Toast notifications */
+[data-theme="dark"] .toast,
+[data-theme="amoled"] .toast {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+/* Inline add forms */
+[data-theme="dark"] .inline-add-form,
+[data-theme="amoled"] .inline-add-form {
+    background: rgba(59, 130, 246, 0.05);
+    border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* Checkbox items */
+[data-theme="dark"] .checkbox-item,
+[data-theme="amoled"] .checkbox-item {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: var(--border-color);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .checkbox-item:hover,
+[data-theme="amoled"] .checkbox-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="dark"] .checkbox-item.checked,
+[data-theme="amoled"] .checkbox-item.checked {
+    background: var(--accent-subtle);
+    border-color: var(--accent);
+}
+
+/* Profile cards */
+[data-theme="dark"] .profile-card,
+[data-theme="amoled"] .profile-card {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-primary);
+}
+
+/* Library items */
+[data-theme="dark"] .library-item,
+[data-theme="amoled"] .library-item {
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-primary);
+}
+
+/* Glass cards inner content */
+[data-theme="dark"] .glass-card h3,
+[data-theme="dark"] .glass-card h4,
+[data-theme="dark"] .glass-card label,
+[data-theme="amoled"] .glass-card h3,
+[data-theme="amoled"] .glass-card h4,
+[data-theme="amoled"] .glass-card label {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .glass-card p,
+[data-theme="amoled"] .glass-card p {
+    color: var(--text-secondary);
+}
+
+/* Step form headings */
+[data-theme="dark"] .step-form h2,
+[data-theme="amoled"] .step-form h2 {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .step-description,
+[data-theme="amoled"] .step-description {
+    color: var(--text-secondary);
+}
+
+/* Add item button */
+[data-theme="dark"] .add-item-btn,
+[data-theme="amoled"] .add-item-btn {
+    color: var(--text-tertiary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .add-item-btn:hover,
+[data-theme="amoled"] .add-item-btn:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+/* Social link inputs */
+[data-theme="dark"] .social-link-input,
+[data-theme="amoled"] .social-link-input {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .social-link-input input,
+[data-theme="amoled"] .social-link-input input {
+    color: var(--text-primary);
+}
+
+/* Chip container */
+[data-theme="dark"] .chip-container,
+[data-theme="amoled"] .chip-container {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .chip-input,
+[data-theme="amoled"] .chip-input {
+    color: var(--text-primary);
+}
+
+/* Tags */
+[data-theme="dark"] .tag,
+[data-theme="amoled"] .tag {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--border-color);
+    color: var(--text-secondary);
+}
+
+/* Completion container */
+[data-theme="dark"] .completion-container h2,
+[data-theme="amoled"] .completion-container h2 {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .completion-container p,
+[data-theme="amoled"] .completion-container p {
+    color: var(--text-secondary);
+}
+
+/* AI Builder form */
+[data-theme="dark"] .ai-builder-form,
+[data-theme="amoled"] .ai-builder-form {
+    background: var(--bg-card);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .ai-builder-form label,
+[data-theme="amoled"] .ai-builder-form label {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .toggle-option,
+[data-theme="amoled"] .toggle-option {
+    color: var(--text-secondary);
+}
+
+/* AI Processing steps */
+[data-theme="dark"] .ai-step,
+[data-theme="amoled"] .ai-step {
+    color: var(--text-tertiary);
+}
+
+[data-theme="dark"] .ai-step.active,
+[data-theme="amoled"] .ai-step.active {
+    color: var(--text-primary);
+}
+
+/* Template cards */
+[data-theme="dark"] .template-select-card,
+[data-theme="amoled"] .template-select-card {
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .template-select-card:hover,
+[data-theme="amoled"] .template-select-card:hover {
+    border-color: var(--border-hover);
+}
+
+[data-theme="dark"] .template-select-name,
+[data-theme="amoled"] .template-select-name {
+    background: var(--bg-card);
+    color: var(--text-primary);
+}
+
+/* Template page cards */
+[data-theme="dark"] .template-card,
+[data-theme="amoled"] .template-card {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .template-card:hover,
+[data-theme="amoled"] .template-card:hover {
+    border-color: var(--accent);
+}
+
+[data-theme="dark"] .template-info h4,
+[data-theme="amoled"] .template-info h4 {
+    color: var(--text-primary);
+}
+
+/* Library tabs */
+[data-theme="dark"] .library-tabs,
+[data-theme="amoled"] .library-tabs {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .lib-tab,
+[data-theme="amoled"] .lib-tab {
+    color: var(--text-secondary);
+}
+
+/* Review section */
+[data-theme="dark"] .review-section,
+[data-theme="amoled"] .review-section {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .review-section-title,
+[data-theme="amoled"] .review-section-title {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .review-section-content,
+[data-theme="amoled"] .review-section-content {
+    color: var(--text-secondary);
+}
+
+/* Settings page */
+[data-theme="dark"] .settings-section h3,
+[data-theme="amoled"] .settings-section h3 {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .setting-row span,
+[data-theme="amoled"] .setting-row span {
+    color: var(--text-secondary);
+}
+
+/* Search overlay */
+[data-theme="dark"] .search-container,
+[data-theme="amoled"] .search-container {
+    background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .search-input-wrap input,
+[data-theme="amoled"] .search-input-wrap input {
+    color: var(--text-primary);
+}
+
+/* Manual builder */
+[data-theme="dark"] .editor-toolbar,
+[data-theme="amoled"] .editor-toolbar {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .editor-toolbar h3,
+[data-theme="amoled"] .editor-toolbar h3 {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .manual-section-tabs,
+[data-theme="amoled"] .manual-section-tabs {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .manual-tab,
+[data-theme="amoled"] .manual-tab {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .manual-tab:hover,
+[data-theme="amoled"] .manual-tab:hover {
+    color: var(--text-primary);
+    background: var(--bg-card);
+}
+
+[data-theme="dark"] .preview-panel-header,
+[data-theme="amoled"] .preview-panel-header {
+    background: var(--bg-secondary);
+    border-color: var(--border-color);
+    color: var(--text-secondary);
+}
+
+/* Score card tips */
+[data-theme="dark"] .tip-item span,
+[data-theme="amoled"] .tip-item span {
+    color: var(--text-secondary);
+}
+
+/* Hero content */
+[data-theme="dark"] .hero-subtitle,
+[data-theme="amoled"] .hero-subtitle {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .stat-label,
+[data-theme="amoled"] .stat-label {
+    color: var(--text-tertiary);
+}
+
+/* Action cards */
+[data-theme="dark"] .action-card h3,
+[data-theme="amoled"] .action-card h3 {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .action-card p,
+[data-theme="amoled"] .action-card p {
+    color: var(--text-secondary);
+}
+
+/* Feature cards */
+[data-theme="dark"] .feature-card h4,
+[data-theme="amoled"] .feature-card h4 {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .feature-card p,
+[data-theme="amoled"] .feature-card p {
+    color: var(--text-secondary);
+}
+
+/* Step items */
+[data-theme="dark"] .step-item span,
+[data-theme="amoled"] .step-item span {
+    color: var(--text-tertiary);
+}
+
+[data-theme="dark"] .step-item.active span,
+[data-theme="amoled"] .step-item.active span {
+    color: var(--accent);
+}
+
+[data-theme="dark"] .step-counter,
+[data-theme="amoled"] .step-counter {
+    color: var(--text-tertiary);
+}
+
+/* Filter buttons */
+[data-theme="dark"] .filter-btn,
+[data-theme="amoled"] .filter-btn {
+    border-color: var(--border-color);
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .filter-btn:hover,
+[data-theme="amoled"] .filter-btn:hover {
+    border-color: var(--border-hover);
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .filter-btn.active,
+[data-theme="amoled"] .filter-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+}
+
+/* Toggle switches */
+[data-theme="dark"] .toggle-slider,
+[data-theme="amoled"] .toggle-slider {
+    background: var(--bg-card);
+    border-color: var(--border-color);
+}
+
+/* Accent Colors */
+[data-accent="purple"] {
+    --accent: #8b5cf6;
+    --accent-hover: #7c3aed;
+    --accent-glow: rgba(139, 92, 246, 0.3);
+    --accent-subtle: rgba(139, 92, 246, 0.1);
+    --gradient-1: linear-gradient(135deg, #8b5cf6, #a78bfa);
+    --gradient-2: linear-gradient(135deg, #a78bfa, #c4b5fd);
+}
+
+[data-accent="green"] {
+    --accent: #10b981;
+    --accent-hover: #059669;
+    --accent-glow: rgba(16, 185, 129, 0.3);
+    --accent-subtle: rgba(16, 185, 129, 0.1);
+    --gradient-1: linear-gradient(135deg, #10b981, #34d399);
+    --gradient-2: linear-gradient(135deg, #34d399, #6ee7b7);
+}
+
+[data-accent="amber"] {
+    --accent: #f59e0b;
+    --accent-hover: #d97706;
+    --accent-glow: rgba(245, 158, 11, 0.3);
+    --accent-subtle: rgba(245, 158, 11, 0.1);
+    --gradient-1: linear-gradient(135deg, #f59e0b, #fbbf24);
+    --gradient-2: linear-gradient(135deg, #fbbf24, #fcd34d);
+}
+
+[data-accent="red"] {
+    --accent: #ef4444;
+    --accent-hover: #dc2626;
+    --accent-glow: rgba(239, 68, 68, 0.3);
+    --accent-subtle: rgba(239, 68, 68, 0.1);
+    --gradient-1: linear-gradient(135deg, #ef4444, #f87171);
+    --gradient-2: linear-gradient(135deg, #f87171, #fca5a5);
+}
+
+[data-accent="pink"] {
+    --accent: #ec4899;
+    --accent-hover: #db2777;
+    --accent-glow: rgba(236, 72, 153, 0.3);
+    --accent-subtle: rgba(236, 72, 153, 0.1);
+    --gradient-1: linear-gradient(135deg, #ec4899, #f472b6);
+    --gradient-2: linear-gradient(135deg, #f472b6, #f9a8d4);
+}
