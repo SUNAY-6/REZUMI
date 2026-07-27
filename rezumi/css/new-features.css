@@ -1,0 +1,425 @@
+/* ============================================
+   REZUMI - New Features CSS
+   Resume Battle, Verification, Video, Portfolio
+   ============================================ */
+
+/* Resume Battle Grid */
+.battle-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.battle-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.battle-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.battle-stats {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Hover Action Icons (Desktop) */
+.hover-actions {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    gap: 4px;
+    z-index: 10;
+    animation: fadeInScale 0.15s ease;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-full);
+    padding: 3px;
+    box-shadow: var(--shadow-md);
+    transition: opacity 0.15s ease;
+}
+
+.hover-action-btn {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.15s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.hover-action-btn:hover {
+    background: var(--accent-subtle);
+    color: var(--accent);
+}
+
+/* Link Icon Badges */
+.link-icon-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent-subtle);
+    color: var(--accent);
+    font-size: 10px;
+}
+
+/* Video Resume */
+.video-preview-container {
+    position: relative;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.video-timer {
+    font-family: var(--font-mono);
+}
+
+/* Portfolio Builder */
+.portfolio-template-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 8px;
+}
+
+.portfolio-preview-frame {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: white;
+}
+
+/* Learning Recommendations */
+.learning-roadmap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    align-items: center;
+}
+
+.learning-roadmap .step {
+    padding: 4px 10px;
+    background: var(--accent-subtle);
+    border-radius: var(--radius-full);
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--accent);
+}
+
+.learning-roadmap .arrow {
+    color: var(--text-muted);
+    font-size: 10px;
+}
+
+.learning-progress-bar {
+    height: 6px;
+    background: var(--bg-card);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.learning-progress-fill {
+    height: 100%;
+    background: var(--gradient-1);
+    border-radius: 3px;
+    transition: width 0.5s ease;
+}
+
+/* Version History */
+.version-timeline {
+    position: relative;
+    padding-left: 20px;
+}
+
+.version-timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border-color);
+}
+
+.version-item {
+    position: relative;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+}
+
+.version-item::before {
+    content: '';
+    position: absolute;
+    left: -16px;
+    top: 14px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg-secondary);
+}
+
+.version-item.current::before {
+    background: var(--success);
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.3);
+}
+
+/* Verification Status Badges */
+.verification-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    border-radius: var(--radius-full);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.verification-badge.pass {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--success);
+}
+
+.verification-badge.fail {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--danger);
+}
+
+.verification-badge.warn {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--warning);
+}
+
+/* Battle VS Divider */
+.battle-vs {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 14px;
+    color: var(--accent);
+    box-shadow: var(--shadow-md);
+}
+
+/* Responsive Battle Grid */
+@media (max-width: 768px) {
+    .battle-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .battle-vs {
+        display: none;
+    }
+}
+
+/* Accessibility: Focus States */
+.hover-action-btn:focus-visible,
+.verification-badge:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    .hover-actions {
+        animation: none;
+    }
+    
+    .version-item::before {
+        transition: none;
+    }
+}
+
+/* High Contrast */
+@media (prefers-contrast: high) {
+    .hover-actions {
+        border-width: 2px;
+    }
+    
+    .hover-action-btn {
+        border: 1px solid currentColor;
+    }
+}
+
+/* ============================================
+   LIBRARY HOVER ACTIONS (Desktop)
+   ============================================ */
+.lib-hover-actions {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: none;
+    gap: 4px;
+    z-index: 10;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-full);
+    padding: 3px;
+    box-shadow: var(--shadow-md);
+}
+
+.swipe-item:hover .lib-hover-actions,
+.library-item:hover .lib-hover-actions {
+    display: flex;
+}
+
+.lib-hover-btn {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 12px;
+    transition: all 0.15s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.lib-hover-btn:hover {
+    background: var(--accent-subtle);
+    color: var(--accent);
+}
+
+.lib-hover-btn-delete:hover {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--danger);
+}
+
+/* Hide on touch devices — use swipe instead */
+@media (hover: none) and (pointer: coarse) {
+    .lib-hover-actions {
+        display: none !important;
+    }
+}
+
+/* ============================================
+   PHOTO EDITOR
+   ============================================ */
+.photo-editor-container {
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #f3f4f6;
+    border: 2px dashed var(--border-color);
+}
+
+.photo-editor-container.circle {
+    border-radius: 50%;
+}
+
+.photo-editor-container.square {
+    border-radius: 8px;
+}
+
+.photo-editor-img {
+    position: absolute;
+    cursor: move;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* Image upload prompt for photo templates */
+.photo-upload-prompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px;
+    margin: 12px 0;
+    background: var(--accent-subtle);
+    border: 2px dashed var(--accent);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.photo-upload-prompt:hover {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+.photo-upload-prompt i {
+    font-size: 24px;
+    color: var(--accent);
+}
+
+.photo-upload-prompt:hover i {
+    color: white;
+}
+
+.photo-upload-prompt span {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.photo-upload-prompt:hover span {
+    color: white;
+}
+
+/* Recent resume cleanup */
+#recent-resumes-list .swipe-action-left,
+#recent-resumes-list .swipe-action-right,
+#recent-resumes-list .lib-hover-actions {
+    display: none !important;
+}
+
+#recent-resumes-list .swipe-item-content {
+    transform: none !important;
+}
+
+/* Recycle bin enhanced items */
+.recycle-item-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 6px;
+}
+
+.recycle-item-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    font-size: 10px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+.recycle-item-tag i {
+    font-size: 8px;
+}
